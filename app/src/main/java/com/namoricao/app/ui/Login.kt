@@ -21,7 +21,7 @@ class Login : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val buttonLogin = findViewById<Button>(R.id.buttonLogin)
+        val buttonLogin = findViewById<Button>(R.id.loginButton)
 
         buttonLogin.setOnClickListener {
             // Obter os valores dos campos de login e senha
