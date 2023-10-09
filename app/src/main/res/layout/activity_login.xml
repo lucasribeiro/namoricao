@@ -31,8 +31,10 @@
                 android:id="@+id/burgerMenuImageView"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/menu"
-                android:layout_gravity="end" />
+                android:src="@drawable/close"
+                android:layout_gravity="end"
+                android:clickable="true"
+                android:onClick="fecharApp"/>
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
@@ -46,51 +48,91 @@
         android:layout_marginTop="16dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Acesse sua conta:"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_gravity="start"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"/>
+
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="Digite seu e-mail"
             android:background="@drawable/rounded_edittext"
             android:padding="12dp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="8dp" />
 
         <EditText
             android:id="@+id/senhaEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Senha"
+            android:hint="Digite sua senha"
             android:background="@drawable/rounded_edittext"
             android:padding="12dp"
             android:layout_marginTop="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:padding="36dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Esqueci minha senha"
+                android:textColor="@android:color/black"
+                android:gravity="start"
+                android:clickable="true"
+                android:onClick="esqueciSenhaClick" />
+
+            <Button
+                android:id="@+id/buttonLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Entrar"
+                android:textColor="@android:color/white"
+                android:background="@color/purple_200" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Não tem uma conta? "
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crie uma conta grátis"
+                android:textColor="@color/purple_500"
+                android:clickable="true"
+                android:onClick="crieContaClick" />
+        </LinearLayout>
+
     </LinearLayout>
-    <!-- Layout para o botão "Esqueci a senha" à esquerda e o botão menor à direita -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="bottom"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp">
 
     <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Esqueci a senha"
-        android:textColor="@android:color/black"
-        android:gravity="start"
-        android:clickable="true"
-        android:onClick="esqueciSenhaClick" />
-
-    <Button
-        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Entrar"
-        android:textColor="@android:color/white"
-        android:background="@color/white" />
-    </LinearLayout>
+        android:text="NamoriCão"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="16dp"/>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,16 @@
+{
+  "usuarios": [
+    {
+      "email": "lucas@acme.com",
+      "senha": "senha1"
+    },
+    {
+      "email": "lucas@namoricao.com",
+      "senha": "senha2"
+    },
+    {
+      "email": "usuario3@example.com",
+      "senha": "senha3"
+    }
+  ]
+}
