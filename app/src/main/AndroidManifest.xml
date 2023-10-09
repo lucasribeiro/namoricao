@@ -12,6 +12,10 @@
         android:theme="@style/Theme.Namoricao"
         tools:targetApi="31">
         <activity
+            android:name=".ui.MeusCaesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Namoricao.NoActionBar"/>
+        <activity
             android:name=".ui.Login"
             android:exported="false"
             android:label="@string/title_activity_login"
@@ -21,11 +25,11 @@
             android:exported="true"
             android:label="@string/title_activity_splash"
             android:theme="@style/Theme.Namoricao.NoActionBar">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
