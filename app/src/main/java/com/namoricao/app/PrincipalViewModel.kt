@@ -1,7 +1,7 @@
-package com.namoricao.app.ui
+package com.namoricao.app
 
 import androidx.lifecycle.ViewModel
 
-class MeusCaesViewModel : ViewModel() {
+class PrincipalViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

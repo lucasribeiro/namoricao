@@ -40,6 +40,11 @@ class Login : AppCompatActivity() {
                     it.readText()
                 }
 
+                // As credenciais são válidas, redirecione para a MeusCaesActivity
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+                /*
                 val gson = Gson()
                 val usuarios = gson.fromJson(jsonContent, Usuarios::class.java)
 
@@ -49,7 +54,7 @@ class Login : AppCompatActivity() {
 
                 if (usuarioEncontrado != null) {
                     // As credenciais são válidas, redirecione para a MeusCaesActivity
-                    val intent = Intent(this, MeusCaesActivity::class.java)
+                    val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else {
@@ -57,6 +62,7 @@ class Login : AppCompatActivity() {
                     // exiba um Toast com a mensagem de erro.
                     Toast.makeText(this, "E-mail ou senha inválido", Toast.LENGTH_SHORT).show()
                 }
+                 */
             } catch (e: Exception) {
                 e.printStackTrace()
             }

@@ -3,7 +3,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_buscar"
-        android:title="Buscar" />
+        android:title="Buscar 3" />
     <item
         android:id="@+id/menu_meus_caes"
         android:title="Meus Caes" />
