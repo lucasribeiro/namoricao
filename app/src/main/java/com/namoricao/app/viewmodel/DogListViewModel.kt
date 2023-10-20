@@ -1,7 +1,7 @@
-package com.namoricao.app
+package com.namoricao.app.viewmodel
 
 import androidx.lifecycle.ViewModel
 
-class PrincipalViewModel : ViewModel() {
+class DogListViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

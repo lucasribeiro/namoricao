@@ -4,12 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.namoricao.app.R
+import com.namoricao.app.fragment.PrincipalFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
@@ -32,25 +32,11 @@ class MainActivity : AppCompatActivity() {
         toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawerLayout.addDrawerListener(toggle)
 
-
-
         toggle.syncState()
-
-
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
-
-
-
-        // Define um OnClickListener para o ícone da Toolbar
-        toolbar.setNavigationOnClickListener {
-            // Abre o menu lateral quando o ícone é clicado
-            drawerLayout.openDrawer(GravityCompat.START)
-        }
-
-
-        toolbar.navigationIcon = null
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.menu)
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
@@ -74,8 +60,26 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
             R.id.menu_meus_caes -> {
-                // Lógica para ação "Meus Cães"
+                Toast.makeText(this, "Email inválido", Toast.LENGTH_SHORT).show()
                 return true
+                /*
+                val navigationView = findViewById<NavigationView>(R.id.nav_view)
+                navigationView.setNavigationItemSelectedListener { menuItem ->
+                    when (menuItem.itemId) {
+                        R.id.nav_my_dogs -> {
+                            val fragmentManager = supportFragmentManager
+                            val transaction = fragmentManager.beginTransaction()
+                            transaction.replace(R.id.fragment_container, DogListFragment())
+                            transaction.commit()
+                        }
+                        // Outros itens de menu
+                    }
+                    val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
+                    drawer.closeDrawer(GravityCompat.START)
+                    true
+                }
+
+                 */
             }
             R.id.menu_sair -> {
                 // Lógica para ação "Sair"

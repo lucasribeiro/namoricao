@@ -1,4 +1,4 @@
-package com.namoricao.app.ui
+package com.namoricao.app.fragment
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,9 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import com.namoricao.app.PrincipalViewModel
+import com.namoricao.app.viewmodel.PrincipalViewModel
 import com.namoricao.app.R
 
 class PrincipalFragment : Fragment() {
