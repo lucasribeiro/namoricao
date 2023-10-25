@@ -10,6 +10,7 @@
         android:id="@+id/imageViewDog"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:padding="16px"
         android:src="@drawable/logo" />
 
     <!-- Layout para o nome e raça -->
@@ -31,6 +32,7 @@
             android:id="@+id/textViewBreed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingBottom="20px"
             android:text="Raça" />
     </LinearLayout>
 </LinearLayout>

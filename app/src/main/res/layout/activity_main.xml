@@ -46,7 +46,10 @@
         <FrameLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:padding="30px"
+            android:layout_marginTop="?android:attr/actionBarSize">
             <!-- Conteúdo principal da atividade -->
         </FrameLayout>
 
