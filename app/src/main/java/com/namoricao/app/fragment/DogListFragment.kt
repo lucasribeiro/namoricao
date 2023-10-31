@@ -36,12 +36,12 @@ class DogListFragment : Fragment() {
         recyclerView.addItemDecoration(DogItemDecoration(spacingInPixels, dividerHeightInPixels, dividerColor))
 
         val dogList = listOf(
-            Dog("Cachorro 1", "Raça 1", R.drawable.logo),
-            Dog("Cachorro 2", "Raça 2", R.drawable.logo),
-            Dog("Cachorro 3", "Raça 3", R.drawable.logo),
-            Dog("Cachorro 1", "Raça 4", R.drawable.logo),
-            Dog("Cachorro 2", "Raça 5", R.drawable.logo),
-            Dog("Cachorro 3", "Raça 6", R.drawable.logo)
+            Dog("Cachorro 1", "Raça 1, Campinas", R.drawable.dog2),
+            Dog("Cachorro 2", "Raça 2, Campinas", R.drawable.dog2),
+            Dog("Cachorro 3", "Raça 3, Campinas", R.drawable.dog2),
+            Dog("Cachorro 1", "Raça 4, Campinas", R.drawable.dog2),
+            Dog("Cachorro 2", "Raça 5, Campinas", R.drawable.dog2),
+            Dog("Cachorro 3", "Raça 6, Campinas", R.drawable.dog2)
             // Adicione mais cães conforme necessário
         )
 

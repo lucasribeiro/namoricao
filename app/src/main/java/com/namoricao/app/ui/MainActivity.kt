@@ -11,6 +11,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.namoricao.app.R
+import com.namoricao.app.adaptors.Screen
 import com.namoricao.app.fragment.DogListFragment
 import com.namoricao.app.fragment.PrincipalFragment
 
@@ -55,16 +56,26 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    private fun inflarFragment(fragmento: Screen)
+    {
+        val tela = when (fragmento) {
+            Screen.MEUS_CAES -> DogListFragment()
+            else -> DogListFragment()
+        }
+
+        val fragmentManager = supportFragmentManager
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.container, tela)
+        transaction.commit()
+    }
+
     private fun setupNavigationView() {
 
         val navigationView = findViewById<NavigationView>(R.id.navigation_view)
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menu_meus_caes -> {
-                    val fragmentManager = supportFragmentManager
-                    val transaction = fragmentManager.beginTransaction()
-                    transaction.replace(R.id.container, DogListFragment())
-                    transaction.commit()
+                    inflarFragment(Screen.MEUS_CAES)
                 }
                 R.id.menu_buscar -> {
                     Toast.makeText(this, "menu_buscar", Toast.LENGTH_SHORT).show()

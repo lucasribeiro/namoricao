@@ -1,6 +1,10 @@
 package com.namoricao.app.adaptors
 
 import android.content.Context
+import android.graphics.Typeface
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,11 +29,24 @@ class DogListAdapter(private val context: Context, private val dogList: List<Dog
     }
 
     override fun onBindViewHolder(holder: DogViewHolder, position: Int) {
-        val currentDog = dogList[position]
 
-        holder.imageViewDog.setImageResource(currentDog.imageResource)
-        holder.textViewName.text = currentDog.name
-        holder.textViewBreed.text = currentDog.breed
+        val dog = dogList[position]
+
+        // Configurar a imagem, nome do cão e informações
+        holder.imageViewDog.setImageResource(dog.imageResource)
+        holder.textViewName.text = dog.name
+
+        //val dogInfo = "${dog.breed}, ${dog.city}"
+        val dogInfo = dog.breed
+        val commaIndex = dogInfo.indexOf(",") // Encontra a posição da vírgula
+
+        if (commaIndex != -1) {
+            val spannable = SpannableString(dogInfo)
+            spannable.setSpan(StyleSpan(Typeface.BOLD), 0, commaIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            holder.textViewBreed.text = spannable
+        } else {
+            holder.textViewBreed.text = dogInfo
+        }
     }
 
     override fun getItemCount() = dogList.size

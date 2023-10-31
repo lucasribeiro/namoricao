@@ -3,15 +3,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal">
 
     <!-- Imagem à esquerda -->
-    <ImageView
+    <!-- Imagem à esquerda -->
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageViewDog"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
         android:padding="16px"
-        android:src="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        app:civ_border_width="1dp"
+        app:civ_border_color="#FF000000"
+        app:civ_border_overlay="true"
+        app:civ_circle_background_color="#00000000" />
 
     <!-- Layout para o nome e raça -->
     <LinearLayout
@@ -25,6 +31,9 @@
             android:id="@+id/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
             android:text="Nome do Cão" />
 
         <!-- Raça do cão -->
@@ -33,6 +42,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="20px"
-            android:text="Raça" />
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:text="Raça, Cidade" />
     </LinearLayout>
 </LinearLayout>
