@@ -43,11 +43,15 @@ class MainActivity : AppCompatActivity() {
 
         setupNavigationView()
 
+        inflarFragment(Screen.MEUS_CAES)
+/*
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, PrincipalFragment())
                 .commit()
         }
+
+ */
     }
 
     // Inflar o menu

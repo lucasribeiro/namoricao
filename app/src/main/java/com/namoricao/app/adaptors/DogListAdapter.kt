@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.namoricao.app.R
 import com.namoricao.app.model.Dog
@@ -33,7 +34,8 @@ class DogListAdapter(private val context: Context, private val dogList: List<Dog
         val dog = dogList[position]
 
         // Configurar a imagem, nome do cão e informações
-        holder.imageViewDog.setImageResource(dog.imageResource)
+        val resourceId = context.resources.getIdentifier(dog.image, "drawable", context.packageName)
+        holder.imageViewDog.setImageResource(resourceId)
         holder.textViewName.text = dog.name
 
         //val dogInfo = "${dog.breed}, ${dog.city}"

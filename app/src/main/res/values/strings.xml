@@ -12,4 +12,6 @@
     <string name="title_activity_login">Login</string>
     <string name="navigation_drawer_open">Abrir</string>
     <string name="navigation_drawer_close">Fechar</string>
+    <string name="NamoricaoPreferences">NamoricaoPreferences</string>
+
 </resources>
