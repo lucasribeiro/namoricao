@@ -12,6 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.namoricao.app.R
 import com.namoricao.app.adaptors.Screen
+import com.namoricao.app.fragment.BuscarFragment
 import com.namoricao.app.fragment.DogListFragment
 import com.namoricao.app.fragment.PrincipalFragment
 
@@ -64,6 +65,7 @@ class MainActivity : AppCompatActivity() {
     {
         val tela = when (fragmento) {
             Screen.MEUS_CAES -> DogListFragment()
+            Screen.BUSCA -> BuscarFragment()
             else -> DogListFragment()
         }
 
@@ -82,10 +84,11 @@ class MainActivity : AppCompatActivity() {
                     inflarFragment(Screen.MEUS_CAES)
                 }
                 R.id.menu_buscar -> {
-                    Toast.makeText(this, "menu_buscar", Toast.LENGTH_SHORT).show()
+                    inflarFragment(Screen.BUSCA)
                 }
                 R.id.menu_sair -> {
-                    Toast.makeText(this, "Sair", Toast.LENGTH_SHORT).show()
+                    finishAffinity() // Fecha todas as atividades e encerra o aplicativo
+                    true // Indica que o item de menu foi manipulado
                 }
                 // Outros itens de menu
             }

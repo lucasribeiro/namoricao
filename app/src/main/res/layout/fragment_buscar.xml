@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_meus_caes.xml -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Área cinza para o título "Meus Cães" e a quantidade -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titulo"
+        android:padding="16px"
+        android:background="@color/BackgroundTitle">
+
+        <EditText
+            android:id="@+id/buscarEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="147dp"
+            android:width="300sp"
+            android:background="@drawable/rounded_edittext_white"
+            android:hint="digite uma raça"
+            android:inputType="text"
+            android:padding="12dp" />
+
+        <TextView
+            android:id="@+id/textViewDogCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="35px"
+            android:padding="16dp"
+            android:layout_alignStart="@id/buscarEditText"
+            android:layout_below="@id/buscarEditText" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonFind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="buscar"
+            app:cornerRadius="16dp"
+            app:strokeWidth="3dp"
+            android:textAllCaps="false"
+            app:strokeColor="@color/Azul"
+            app:backgroundTint="@color/BackgroundTitle"
+            app:rippleColor="@color/Azul"
+            android:textColor="@color/Azul"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp" />
+    </RelativeLayout>
+
+    <!-- RecyclerView para a lista de cães -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDogs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/titulo"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp" />
+
+</RelativeLayout>
+

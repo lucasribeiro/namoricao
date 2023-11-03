@@ -12,7 +12,7 @@
     "id": 2,
     "name": "Buddy",
     "city": "Rio de Janeiro",
-    "breed": "Golden Retriever",
+    "breed": "Boxer",
     "idade": 2,
     "email": "lucas@acme.com",
     "image": "dog2_e"
@@ -33,7 +33,7 @@
     "breed": "Boxer",
     "idade": 3,
     "email": "usuario1@example.com",
-    "image": "dog4.jpg"
+    "image": "dog4"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "breed": "Pincher",
     "idade": 2,
     "email": "usuario2@example.com",
-    "image": "dog5.jpg"
+    "image": "dog5_a"
   },
   {
     "id": 6,
@@ -51,6 +51,6 @@
     "breed": "Chuaua",
     "idade": 4,
     "email": "usuario1@example.com",
-    "image": "dog6.jpg"
+    "image": "dog6_b"
   }
 ]
