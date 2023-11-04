@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_meus_caes.xml -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Área cinza para o título "Meus Cães" e a quantidade -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titulo"
+        android:padding="16px"
+        android:background="@color/BackgroundTitle">
+
+    <!-- Título "Meus Cães" alinhado à esquerda -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meus Cães"
+        android:textStyle="bold"
+        android:textSize="50px"
+        android:paddingLeft="16dp"
+        android:textColor="@color/Azul"
+        android:layout_alignParentStart="true" />
+
+    <!-- Contador da quantidade de cães abaixo de "Meus Cães" -->
+    <TextView
+        android:id="@+id/textViewDogCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35px"
+        android:text="4 Cães"
+        android:paddingLeft="16dp"
+        android:layout_alignStart="@id/textViewTitle"
+        android:layout_below="@id/textViewTitle" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonAddDog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="adicionar"
+        app:cornerRadius="16dp"
+        app:strokeWidth="3dp"
+        android:textAllCaps="false"
+        app:strokeColor="@color/Azul"
+        app:backgroundTint="@color/BackgroundTitle"
+        app:rippleColor="@color/Azul"
+        android:textColor="@color/Azul"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp" />
+    </RelativeLayout>
+
+    <!-- RecyclerView para a lista de cães -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDogs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/titulo"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp" />
+
+</RelativeLayout>
+

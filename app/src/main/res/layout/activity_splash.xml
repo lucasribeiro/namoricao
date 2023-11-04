@@ -21,6 +21,6 @@
         android:layout_marginBottom="16dp"
         android:text="NamoriCão"
         android:textSize="18sp"
-        android:textColor="@color/black" />
+        android:textColor="@color/Rosa" />
 
 </RelativeLayout>

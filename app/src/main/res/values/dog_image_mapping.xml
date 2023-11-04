@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- dog_image_mapping.xml -->
+
+<resources>
+    <item name="dog1" type="drawable">@drawable/dog1_d</item>
+    <item name="dog2" type="drawable">@drawable/dog2_e</item>
+    <item name="dog3_c" type="drawable">@drawable/dog3_f</item>
+    <item name="dog4" type="drawable">@drawable/dog4_new</item>
+    <item name="dog5_b" type="drawable">@drawable/dog5_b</item>
+    <item name="dog6_c" type="drawable">@drawable/dog6_c</item>
+</resources>

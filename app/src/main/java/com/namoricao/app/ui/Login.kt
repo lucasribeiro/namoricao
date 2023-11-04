@@ -1,22 +1,16 @@
 package com.namoricao.app.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.namoricao.app.R
 import android.widget.Button
 import android.widget.Toast
 import com.namoricao.app.databinding.ActivityLoginBinding
-import org.json.JSONObject
 import com.google.gson.Gson
-import com.namoricao.app.model.Usuario
 import com.namoricao.app.model.Usuarios
 
 class Login : AppCompatActivity() {
@@ -47,6 +41,11 @@ class Login : AppCompatActivity() {
                     it.readText()
                 }
 
+                // As credenciais são válidas, redirecione para a MeusCaesActivity
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+
                 val gson = Gson()
                 val usuarios = gson.fromJson(jsonContent, Usuarios::class.java)
 
@@ -55,15 +54,25 @@ class Login : AppCompatActivity() {
                 }
 
                 if (usuarioEncontrado != null) {
-                    // As credenciais são válidas, você pode fazer o que for necessário aqui
-                    // Por exemplo, iniciar uma nova atividade ou exibir uma mensagem de sucesso
-                    // Após a autenticação bem-sucedida.
-                    Toast.makeText(this, "Sucesso!!!", Toast.LENGTH_SHORT).show()
+                    // As credenciais são válidas, redirecione para a MeusCaesActivity
+
+                    // Obtém uma referência às SharedPreferences
+                    val sharedPreferences = getSharedPreferences("NamoricaoPreferences", Context.MODE_PRIVATE)
+
+                    // Obtém um editor para modificar as SharedPreferences
+                    val editor = sharedPreferences.edit()
+
+                    // Salva o email do usuário nas SharedPreferences
+                    editor.putString("userEmail", emailDigitado)
+                    editor.apply()
+
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 } else {
-                    // Se as credenciais não correspondem a nenhum usuário no arquivo JSON,
-                    // exiba um Toast com a mensagem de erro.
                     Toast.makeText(this, "E-mail ou senha inválido", Toast.LENGTH_SHORT).show()
                 }
+
             } catch (e: Exception) {
                 e.printStackTrace()
             }

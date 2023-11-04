@@ -5,9 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:background="@android:color/white"
-    tools:context=".ui.Login"
-    android:padding="36px">
+    tools:context=".ui.Login">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -16,25 +16,26 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="70dp"
             android:background="@color/white"
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
             <ImageView
+                android:id="@+id/burgerMenuImageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/close"
+                android:clickable="true"
+                android:onClick="fecharApp"/>
+
+            <ImageView
                 android:id="@+id/logoImageView"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/logo" />
-
-            <ImageView
-                android:id="@+id/burgerMenuImageView"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:src="@drawable/close"
                 android:layout_gravity="end"
-                android:clickable="true"
-                android:onClick="fecharApp"/>
+                android:layout_marginRight="100px"
+                android:src="@drawable/logo" />
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
@@ -52,10 +53,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Acesse sua conta:"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
+            android:textColor="@color/TextColor"
+            android:textStyle="bold"
+            android:textSize="30sp"
             android:layout_gravity="start"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"/>
 
         <EditText
@@ -90,18 +91,27 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Esqueci minha senha"
-                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:textColor="@color/Azul"
                 android:gravity="start"
                 android:clickable="true"
                 android:onClick="esqueciSenhaClick" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Entrar"
-                android:textColor="@android:color/white"
-                android:background="@color/purple_200" />
+                android:text="entrar"
+                android:textAllCaps="false"
+                app:cornerRadius="16dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/Rosa"
+                app:backgroundTint="@color/Rosa"
+                app:rippleColor="@color/Rosa"
+                android:textColor="@color/white"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -114,14 +124,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Não tem uma conta? "
-                android:textColor="@android:color/black" />
+                android:text="Não tem cadastro? "
+                android:textSize="18dp"
+                android:textColor="@color/TextColor" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Crie uma conta grátis"
-                android:textColor="@color/purple_500"
+                android:textSize="18dp"
+                android:textColor="@color/Azul"
                 android:clickable="true"
                 android:onClick="crieContaClick" />
         </LinearLayout>
@@ -133,7 +145,7 @@
         android:layout_height="wrap_content"
         android:text="NamoriCão"
         android:textSize="18sp"
-        android:textColor="@android:color/black"
+        android:textColor="@color/Rosa"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="16dp"/>
 
