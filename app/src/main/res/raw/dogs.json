@@ -4,53 +4,59 @@
     "name": "Rex",
     "city": "São Paulo",
     "breed": "Labrador",
-    "idade": 3,
+    "age": 3,
     "email": "lucas@acme.com",
-    "image": "dog1_d"
+    "image": "dog1_d",
+    "phone": "(12) 9999-0101"
   },
   {
     "id": 2,
     "name": "Buddy",
     "city": "Rio de Janeiro",
     "breed": "Boxer",
-    "idade": 2,
+    "age": 2,
     "email": "lucas@acme.com",
-    "image": "dog2_e"
+    "image": "dog2_e",
+    "phone": "(12) 9999-0101"
   },
   {
     "id": 3,
     "name": "Luna",
     "city": "São Paulo",
     "breed": "Poodle",
-    "idade": 4,
+    "age": 4,
     "email": "lucas@acme.com",
-    "image": "dog3_f"
+    "image": "dog3_f",
+    "phone": "(12) 9999-0101"
   },
   {
     "id": 4,
     "name": "Spike",
     "city": "São Paulo",
     "breed": "Boxer",
-    "idade": 3,
+    "age": 3,
     "email": "usuario1@example.com",
-    "image": "dog4"
+    "image": "dog4",
+    "phone": "(12) 9999-0102"
   },
   {
     "id": 5,
     "name": "Lola",
     "city": "Rio de Janeiro",
     "breed": "Pincher",
-    "idade": 2,
+    "age": 2,
     "email": "usuario2@example.com",
-    "image": "dog5_a"
+    "image": "dog5_a",
+    "phone": "(12) 9999-0103"
   },
   {
     "id": 6,
     "name": "Kiko",
     "city": "São Paulo",
     "breed": "Chuaua",
-    "idade": 4,
+    "age": 4,
     "email": "usuario1@example.com",
-    "image": "dog6_b"
+    "image": "dog6_b",
+    "phone": "(12) 9999-0104"
   }
 ]

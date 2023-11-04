@@ -1,6 +1,7 @@
 package com.namoricao.app.fragment
 
 import android.content.Context
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModel
 import android.os.Bundle
@@ -21,9 +22,11 @@ import com.namoricao.app.adaptors.DogItemDecoration
 import com.namoricao.app.adaptors.DogListAdapter
 import com.namoricao.app.adaptors.Screen
 import com.namoricao.app.databinding.ActivityLoginBinding
+import com.namoricao.app.interfaces.OnItemClickListener
 import com.namoricao.app.model.Dog
+import com.namoricao.app.ui.DogDetailActivity
 
-class BuscarFragment : Fragment() {
+class BuscarFragment : Fragment(), OnItemClickListener {
 
     companion object {
         fun newInstance() = BuscarFragment()
@@ -70,7 +73,7 @@ class BuscarFragment : Fragment() {
             dogCount.text = dogsList.count().toString() + " cães"
         }
 
-        val adapter = DogListAdapter(requireContext(), dogsList, Screen.BUSCA)
+        val adapter = DogListAdapter(requireContext(), dogsList, Screen.BUSCA, this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
@@ -98,6 +101,13 @@ class BuscarFragment : Fragment() {
         val dogList: List<Dog> = gson.fromJson(jsonString, object : TypeToken<List<Dog>>() {}.type)
 
         return dogList.filter { it.breed == raca }
+    }
+
+    override fun onItemClick(position: Int) {
+        val dogId = position
+        val intent = Intent(context, DogDetailActivity::class.java)
+        intent.putExtra("dogId", dogId)
+        startActivity(intent)
     }
 
 }
