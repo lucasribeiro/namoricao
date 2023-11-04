@@ -12,9 +12,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.namoricao.app.R
+import com.namoricao.app.interfaces.OnItemClickListener
 import com.namoricao.app.model.Dog
 
-class DogListAdapter(private val context: Context, private val dogList: List<Dog>, private val tela: Screen) :
+
+private var onItemClickListener: ((Int) -> Unit)? = null
+class DogListAdapter(private val context: Context,
+                     private val dogList: List<Dog>,
+                     private val tela: Screen,
+                     private val listener: OnItemClickListener
+) :
     RecyclerView.Adapter<DogListAdapter.DogViewHolder>() {
 
     inner class DogViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -52,7 +59,14 @@ class DogListAdapter(private val context: Context, private val dogList: List<Dog
         } else {
             holder.textViewBreed.text = dogInfo
         }
+
+        holder.itemView.setOnClickListener {
+            listener.onItemClick(dog.id)
+        }
+
+
     }
 
     override fun getItemCount() = dogList.size
+
 }

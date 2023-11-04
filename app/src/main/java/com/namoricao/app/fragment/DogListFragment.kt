@@ -1,6 +1,7 @@
 package com.namoricao.app.fragment
 
 import android.content.Context
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -18,15 +19,19 @@ import com.namoricao.app.R
 import com.namoricao.app.adaptors.DogItemDecoration
 import com.namoricao.app.adaptors.DogListAdapter
 import com.namoricao.app.adaptors.Screen
+import com.namoricao.app.interfaces.OnItemClickListener
 import com.namoricao.app.model.Dog
+import com.namoricao.app.ui.DogDetailActivity
 
-class DogListFragment : Fragment() {
+class DogListFragment : Fragment(), OnItemClickListener {
 
     companion object {
         fun newInstance() = DogListFragment()
     }
 
     private lateinit var viewModel: DogListViewModel
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var DogCount: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +39,16 @@ class DogListFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_dog_list, container, false)
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewDogs)
+        recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewDogs)
+        DogCount = view.findViewById<TextView>(R.id.textViewDogCount)
+
+        iniciarRecycleView()
+
+        return view
+    }
+
+    fun  iniciarRecycleView() {
+
         val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing_between_items) // 20 pixels
         val dividerHeightInPixels = resources.getDimensionPixelSize(R.dimen.divider_height) // Altura da linha, em pixels
         val dividerColor = ContextCompat.getColor(requireContext(), R.color.TextColor) // Cor da linha
@@ -58,20 +72,24 @@ class DogListFragment : Fragment() {
         val userEmail = sharedPreferences.getString("userEmail", "")
 
         val userDogs = dogList.filter { it.email == userEmail }
-        val DogCount = view.findViewById<TextView>(R.id.textViewDogCount)
         DogCount.text = userDogs.count().toString() + " cães"
 
-        val adapter = DogListAdapter(requireContext(), userDogs, Screen.MEUS_CAES)
+        val adapter = DogListAdapter(requireContext(), userDogs, Screen.MEUS_CAES, this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
-
-        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(DogListViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+
+    override fun onItemClick(position: Int) {
+        val dogId = position
+        val intent = Intent(context, DogDetailActivity::class.java)
+        intent.putExtra("dogId", dogId)
+        startActivity(intent)
     }
 
 }

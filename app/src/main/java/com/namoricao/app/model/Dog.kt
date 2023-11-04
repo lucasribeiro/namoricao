@@ -6,4 +6,5 @@ data class Dog(val id: Int,
                val breed: String,
                val age: Int,
                val email: String,
-               val image: String)
+               val image: String,
+               val phone: String)
