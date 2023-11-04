@@ -17,6 +17,7 @@ import com.namoricao.app.viewmodel.DogListViewModel
 import com.namoricao.app.R
 import com.namoricao.app.adaptors.DogItemDecoration
 import com.namoricao.app.adaptors.DogListAdapter
+import com.namoricao.app.adaptors.Screen
 import com.namoricao.app.model.Dog
 
 class DogListFragment : Fragment() {
@@ -36,7 +37,7 @@ class DogListFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewDogs)
         val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing_between_items) // 20 pixels
         val dividerHeightInPixels = resources.getDimensionPixelSize(R.dimen.divider_height) // Altura da linha, em pixels
-        val dividerColor = ContextCompat.getColor(requireContext(), R.color.divider_color) // Cor da linha
+        val dividerColor = ContextCompat.getColor(requireContext(), R.color.TextColor) // Cor da linha
         recyclerView.addItemDecoration(DogItemDecoration(spacingInPixels, dividerHeightInPixels, dividerColor))
 
         // Lê o arquivo JSON
@@ -60,7 +61,7 @@ class DogListFragment : Fragment() {
         val DogCount = view.findViewById<TextView>(R.id.textViewDogCount)
         DogCount.text = userDogs.count().toString() + " cães"
 
-        val adapter = DogListAdapter(requireContext(), userDogs)
+        val adapter = DogListAdapter(requireContext(), userDogs, Screen.MEUS_CAES)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 

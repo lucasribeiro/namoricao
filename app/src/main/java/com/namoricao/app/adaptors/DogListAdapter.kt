@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.namoricao.app.R
 import com.namoricao.app.model.Dog
 
-class DogListAdapter(private val context: Context, private val dogList: List<Dog>) :
+class DogListAdapter(private val context: Context, private val dogList: List<Dog>, private val tela: Screen) :
     RecyclerView.Adapter<DogListAdapter.DogViewHolder>() {
 
     inner class DogViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -37,7 +37,12 @@ class DogListAdapter(private val context: Context, private val dogList: List<Dog
         holder.imageViewDog.setImageResource(resourceId)
         holder.textViewName.text = dog.name
 
-        val dogInfo = "${dog.breed}, ${dog.city}"
+        var dogInfo = "${dog.breed}, ${dog.city}"
+
+        if (tela == Screen.MEUS_CAES) {
+            dogInfo = dog.breed
+        }
+
         val commaIndex = dogInfo.indexOf(",") // Encontra a posição da vírgula
 
         if (commaIndex != -1) {

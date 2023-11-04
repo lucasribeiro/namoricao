@@ -7,14 +7,12 @@
     android:orientation="horizontal">
 
     <!-- Imagem à esquerda -->
-    <!-- Imagem à esquerda -->
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageViewDog"
         android:layout_width="68dp"
         android:layout_height="68dp"
         android:padding="16px"
         app:srcCompat="@drawable/logo"
-        app:civ_border_width="1dp"
         app:civ_border_color="#FF000000"
         app:civ_border_overlay="true"
         app:civ_circle_background_color="#00000000" />

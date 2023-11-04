@@ -19,6 +19,7 @@ import com.namoricao.app.viewmodel.BuscarViewModel
 import com.namoricao.app.R
 import com.namoricao.app.adaptors.DogItemDecoration
 import com.namoricao.app.adaptors.DogListAdapter
+import com.namoricao.app.adaptors.Screen
 import com.namoricao.app.databinding.ActivityLoginBinding
 import com.namoricao.app.model.Dog
 
@@ -69,7 +70,7 @@ class BuscarFragment : Fragment() {
             dogCount.text = dogsList.count().toString() + " cães"
         }
 
-        val adapter = DogListAdapter(requireContext(), dogsList)
+        val adapter = DogListAdapter(requireContext(), dogsList, Screen.BUSCA)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 

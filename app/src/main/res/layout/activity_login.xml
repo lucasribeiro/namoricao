@@ -145,7 +145,7 @@
         android:layout_height="wrap_content"
         android:text="NamoriCão"
         android:textSize="18sp"
-        android:textColor="@android:color/black"
+        android:textColor="@color/Rosa"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="16dp"/>
 
