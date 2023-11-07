@@ -41,11 +41,6 @@ class Login : AppCompatActivity() {
                     it.readText()
                 }
 
-                // As credenciais são válidas, redirecione para a MeusCaesActivity
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                finish()
-
                 val gson = Gson()
                 val usuarios = gson.fromJson(jsonContent, Usuarios::class.java)
 

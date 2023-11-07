@@ -20,7 +20,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
         android:text="NamoriCão"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textColor="@color/Rosa" />
 
 </RelativeLayout>
