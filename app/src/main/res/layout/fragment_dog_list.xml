@@ -30,7 +30,7 @@
         android:id="@+id/textViewDogCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="35px"
+        android:textSize="14sp"
         android:text="4 Cães"
         android:paddingLeft="16dp"
         android:layout_alignStart="@id/textViewTitle"

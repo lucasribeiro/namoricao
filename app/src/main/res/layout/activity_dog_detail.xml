@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="Nome:"
             android:textStyle="bold"
-            android:textSize="26sp"
+            android:textSize="18sp"
             android:layout_marginTop="16dp"/>
 
         <TextView
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nome do Cão"
-            android:textSize="26sp"/>
+            android:textSize="18sp"/>
 
         <!-- Campo "Raça do Cão" -->
         <TextView
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:text="Raça:"
             android:textStyle="bold"
-            android:textSize="26sp"
+            android:textSize="18sp"
             android:layout_marginTop="8dp"/>
 
         <TextView
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Raça do Cão"
-            android:textSize="26sp"/>
+            android:textSize="18sp"/>
 
         <!-- Campo "Cidade do Cão" -->
         <TextView
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:text="Cidade:"
             android:textStyle="bold"
-            android:textSize="26sp"
+            android:textSize="18sp"
             android:layout_marginTop="8dp"/>
 
         <TextView
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cidade do Cão"
-            android:textSize="26sp"/>
+            android:textSize="18sp"/>
 
         <!-- Campo "Email do Dono" -->
         <TextView
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:text="Telefone:"
             android:textStyle="bold"
-            android:textSize="26sp"
+            android:textSize="18sp"
             android:layout_marginTop="8dp"/>
 
         <TextView
@@ -84,5 +84,5 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Email do Dono"
-            android:textSize="26sp"/>
+            android:textSize="18sp"/>
     </LinearLayout>
